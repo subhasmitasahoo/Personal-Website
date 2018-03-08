@@ -1,5 +1,6 @@
 var express = require("express");
 var app = express();
+
 app.use(express.static("public"));
 app.set("view engine","ejs");
 var bodyParser = require('body-parser');
@@ -8,12 +9,26 @@ app.use(bodyParser.urlencoded({extended:true}));
 var nodemailer = require('nodemailer');
 var router = express.Router();
 
+var path = require('path');
+
 var port = process.env.PORT || 8080;
 
 app.get("/",function(req,res){
    res.render("index.ejs"); 
 });
 
+app.get("/downloadResume",function(req,res){
+    console.log("downloading...");
+    var file = path.join(__dirname, 'resume.pdf');
+   res.download(file, function (err) {
+       if (err) {
+           console.log("Error");
+           console.log(err);
+       } else {
+           console.log("Success");
+       }
+   });
+});
 
 app.post("/message",function(req,res){
     var name = req.body.name;
