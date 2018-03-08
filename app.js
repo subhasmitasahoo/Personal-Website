@@ -30,6 +30,14 @@ app.get("/downloadResume",function(req,res){
    });
 });
 
+app.get("/blogs/personalsite", function(req,res){
+  res.render("personalSiteBlog.ejs");
+});
+
+app.get("/home",function(req,res){
+  res.render("index.ejs");
+});
+
 app.post("/message",function(req,res){
     var name = req.body.name;
     var email = req.body.email;
