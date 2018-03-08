@@ -35,7 +35,7 @@ app.get("/blogs/personalsite", function(req,res){
 });
 
 app.get("/home",function(req,res){
-  res.render("index.ejs");
+  res.redirect("/");
 });
 
 app.post("/message",function(req,res){
