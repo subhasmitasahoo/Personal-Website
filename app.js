@@ -17,18 +17,18 @@ app.get("/",function(req,res){
    res.render("index.ejs"); 
 });
 
-app.get("/downloadResume",function(req,res){
-    console.log("downloading...");
-    var file = path.join(__dirname, 'resume.pdf');
-   res.download(file, function (err) {
-       if (err) {
-           console.log("Error");
-           console.log(err);
-       } else {
-           console.log("Success");
-       }
-   });
-});
+// app.get("/downloadResume",function(req,res){
+//     console.log("downloading...");
+//     var file = path.join(__dirname, 'resume.pdf');
+//    res.download(file, function (err) {
+//        if (err) {
+//            console.log("Error");
+//            console.log(err);
+//        } else {
+//            console.log("Success");
+//        }
+//    });
+// });
 
 app.get("/blogs/personalsite", function(req,res){
   res.render("personalSiteBlog.ejs");
