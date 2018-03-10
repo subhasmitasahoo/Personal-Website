@@ -54,8 +54,8 @@ app.post("/message",function(req,res){
     var mailOptions = {
     from: email, // sender address
     to: 'subhasmitasahoo.247@gmail.com', // list of receivers
-    subject: 'Someone from Subhasmita Portfolio', // Subject line
-    text: message
+    subject: name+' from Subhasmita Portfolio', // Subject line
+    text: "Email "+email+"Message "+message
 	};
 
 	transporter.sendMail(mailOptions, function(error, info){
